@@ -31,7 +31,7 @@ int main(){
 	printf("(%.2f)x + (%.2f)y + (%.2f)w = %.2f\n", x2, y2, w, const2);
 	printf("(%.2f)x + (%.2f)y + (%.2f)P = %.2f\n", (-1)*x, (-1)*y, p, constnt);
 	
-	//Feltöltjük a matrix 2 dimenziós tömböt a változókkal és kiírjuk a tartalmát.
+	//FeltÃ¶ltjÃ¼k a matrix 2 dimenziÃ³s tÃ¶mbÃ¶t a vÃ¡ltozÃ³kkal Ã©s kiÃ­rjuk a tartalmÃ¡t.
 	int i,j;
 	float matrix[3][6]={{x1,y1,u1,w1,p1,const1},{x2,y2,u2,w2,p2,const2},{x3,y3,u3,w3,p3,const3}};
 	printf("\n\tx\ty\tu\tw\tP\n");
@@ -42,7 +42,7 @@ int main(){
 		}
 		printf("\n");
 	}
-	//Megkeressük a harmadik sorban a legkisebb elemet és eltároljuk annak az indexét a pivotCol-ban.
+	//MegkeressÃ¼k a harmadik sorban a legkisebb elemet Ã©s eltÃ¡roljuk annak az indexÃ©t a pivotCol-ban.
 	int pivotCol=0; //Ez gyakorlatilag azt mutatja meg, hogy melyik oszlopban lesz a pivotElement.
 	float minimum=matrix[2][0];
 	for(j=0; j<3; j++){
@@ -51,20 +51,20 @@ int main(){
 			pivotCol=j;
 		}
 	}
-	//Megtaláltuk az oszlopot. A harmadik sor felett két együttható lesz ebben az oszlopban. Elosztjuk velük a hozzájuk tartozó konstansokat.
+	//MegtalÃ¡ltuk az oszlopot. A harmadik sor felett kÃ©t egyÃ¼tthatÃ³ lesz ebben az oszlopban. Elosztjuk velÃ¼k a hozzÃ¡juk tartozÃ³ konstansokat.
 	float const1Div=matrix[0][5]/(matrix[0][pivotCol]);
 	float const2Div=matrix[1][5]/(matrix[1][pivotCol]);
 	float pivotElement;
 	int pivotRow=0; //Ebben a sorban lesz a pivotElement.
-	//A pivotElement tulajdonképpen abban a sorban lesz, ahol a fenti osztások hányadosa kisebb.
+	//A pivotElement tulajdonkÃ©ppen abban a sorban lesz, ahol a fenti osztÃ¡sok hÃ¡nyadosa kisebb.
 	if(const1Div<const2Div){
 		pivotElement=matrix[0][pivotCol];
 	}else{
 		pivotElement=matrix[1][pivotCol];
 		pivotRow++;
 	}
-	//Megtaláltuk a pivotElement-et.
-	//Most 1-gyel egyenlõvé tesszük a pivotElementet, úgy, hogy annak a reciprokával szorozzuk a sorának az összes elemét.
+	//MegtalÃ¡ltuk a pivotElement-et.
+	//Most 1-gyel egyenlÅ‘vÃ© tesszÃ¼k a pivotElementet, Ãºgy, hogy annak a reciprokÃ¡val szorozzuk a sorÃ¡nak az Ã¶sszes elemÃ©t.
 	float pivotReciprocal=1/matrix[pivotRow][pivotCol];
 	for(j=0; j<6; j++){
 		matrix[pivotRow][j]*=pivotReciprocal;
@@ -77,13 +77,13 @@ int main(){
 		}
 		printf("\n");
 	}
-	//Létrehozunk egy segédvektort.
+	//LÃ©trehozunk egy segÃ©dvektort.
 	float help[6];
 	for(i=0; i<6; i++){
 			help[i]=0;
 	}
-	//Még mindig a matrix[pivotRow][pivotCol] a pivotElement. Most az (alatta és felette) vagy (alatta és azalatt) lévõ együtthatókat akarjuk 0-vá tenni.
-	//Ez a felette lévõ együttható.
+	//MÃ©g mindig a matrix[pivotRow][pivotCol] a pivotElement. Most az (alatta Ã©s felette) vagy (alatta Ã©s azalatt) lÃ©vÅ‘ egyÃ¼tthatÃ³kat akarjuk 0-vÃ¡ tenni.
+	//Ez a felette lÃ©vÅ‘ egyÃ¼tthatÃ³.
 	if(pivotRow==1){
 		for(i=0; i<6; i++){
 			help[i]=matrix[pivotRow-1][pivotCol]*matrix[pivotRow][i];
@@ -91,7 +91,7 @@ int main(){
 		for(i=0; i<6; i++){
 		matrix[pivotRow-1][i]-=help[i];
 		}
-	}else{//Mivel a pivotRow értéke 0 vagy 1 lehet, ezért, ha nem 1, akkor 0... ebben az esetben elõször a második (1-es indexû) sorban kell 0-vá tenni az együtthatót.
+	}else{//Mivel a pivotRow Ã©rtÃ©ke 0 vagy 1 lehet, ezÃ©rt, ha nem 1, akkor 0... ebben az esetben elÅ‘szÃ¶r a mÃ¡sodik (1-es indexÅ±) sorban kell 0-vÃ¡ tenni az egyÃ¼tthatÃ³t.
 		for(i=0; i<6; i++){
 			help[i]=matrix[pivotRow+1][pivotCol]*matrix[pivotRow][i];	
 		}
@@ -99,7 +99,7 @@ int main(){
 			matrix[pivotRow+1][i]-=help[i];
 		}
 	}
-	//Ez az alatta lévõ együttható.
+	//Ez az alatta lÃ©vÅ‘ egyÃ¼tthatÃ³.
 	if(pivotRow==1){
 		for(i=0; i<6; i++){
 			help[i]=matrix[pivotRow+1][pivotCol]*matrix[pivotRow][i];
@@ -107,7 +107,7 @@ int main(){
 		for(i=0; i<6; i++){
 		matrix[pivotRow+1][i]-=help[i];
 		}
-	}else{//Mivel a pivotRow értéke 0 vagy 1 lehet, ezért, ha nem 1, akkor 0... ebben az esetben itt a harmadik (2-es indexû) sorban kell 0-vá tenni az együtthatót.
+	}else{//Mivel a pivotRow Ã©rtÃ©ke 0 vagy 1 lehet, ezÃ©rt, ha nem 1, akkor 0... ebben az esetben itt a harmadik (2-es indexÅ±) sorban kell 0-vÃ¡ tenni az egyÃ¼tthatÃ³t.
 		for(i=0; i<6; i++){
 			help[i]=matrix[pivotRow+2][pivotCol]*matrix[pivotRow][i];	
 		}
@@ -123,7 +123,7 @@ int main(){
 		}
 		printf("\n");
 	}
-	//Most újra megvizsgáljuk a harmadik sort és megkeressük a legkisebb értékének indexét, amit a pivotCol-ban tárolunk. Innentõl ismétlõdnek a lépések...
+	//Most Ãºjra megvizsgÃ¡ljuk a harmadik sort Ã©s megkeressÃ¼k a legkisebb Ã©rtÃ©kÃ©nek indexÃ©t, amit a pivotCol-ban tÃ¡rolunk. InnentÅ‘l ismÃ©tlÅ‘dnek a lÃ©pÃ©sek...
 	pivotCol=0; //Ez gyakorlatilag azt mutatja meg, hogy melyik oszlopban lesz a pivotElement.
 	minimum=matrix[2][0];
 	for(j=0; j<3; j++){
@@ -132,13 +132,13 @@ int main(){
 			pivotCol=j;
 		}
 	}
-	//Megtaláltuk az oszlopot. A harmadik sor felett két együttható lesz ebben az oszlopban. Elosztjuk velük a hozzájuk tartozó konstansokat.
+	//MegtalÃ¡ltuk az oszlopot. A harmadik sor felett kÃ©t egyÃ¼tthatÃ³ lesz ebben az oszlopban. Elosztjuk velÃ¼k a hozzÃ¡juk tartozÃ³ konstansokat.
 	const1Div=matrix[0][5]/(matrix[0][pivotCol]);
 	//printf("\n\n%.2f", const1Div);
 	const2Div=matrix[1][5]/(matrix[1][pivotCol]);
 	//printf("\n\n%.2f", const2Div);
 	pivotRow=0; //Ebben a sorban lesz a pivotElement.
-	//A pivotElement tulajdonképpen abban a sorban lesz, ahol a fenti osztások hányadosa kisebb.
+	//A pivotElement tulajdonkÃ©ppen abban a sorban lesz, ahol a fenti osztÃ¡sok hÃ¡nyadosa kisebb.
 	pivotElement=0;
 	if(const1Div<const2Div){
 		pivotElement=matrix[0][pivotCol];
@@ -146,8 +146,8 @@ int main(){
 		pivotElement=matrix[1][pivotCol];
 		pivotRow++;
 	}
-	//Megtaláltuk a pivotElement-et.
-	//Most 1-gyel egyenlõvé tesszük a pivotElementet, úgy, hogy annak a reciprokával szorozzuk a sorának az összes elemét.
+	//MegtalÃ¡ltuk a pivotElement-et.
+	//Most 1-gyel egyenlÅ‘vÃ© tesszÃ¼k a pivotElementet, Ãºgy, hogy annak a reciprokÃ¡val szorozzuk a sorÃ¡nak az Ã¶sszes elemÃ©t.
 	pivotReciprocal=1/matrix[pivotRow][pivotCol];
 	for(j=0; j<6; j++){
 		matrix[pivotRow][j]*=pivotReciprocal;
@@ -160,8 +160,8 @@ int main(){
 		}
 		printf("\n");
 	}
-	//Még mindig a matrix[pivotRow][pivotCol] a pivotElement. Most az (alatta és felette) vagy (alatta és azalatt) lévõ együtthatókat akarjuk 0-vá tenni.
-	//Ez az alatta lévõ együttható.
+	//MÃ©g mindig a matrix[pivotRow][pivotCol] a pivotElement. Most az (alatta Ã©s felette) vagy (alatta Ã©s azalatt) lÃ©vÅ‘ egyÃ¼tthatÃ³kat akarjuk 0-vÃ¡ tenni.
+	//Ez az alatta lÃ©vÅ‘ egyÃ¼tthatÃ³.
 	if(pivotRow==0){
 		for(i=0; i<6; i++){
 			help[i]=matrix[pivotRow+1][pivotCol]*matrix[pivotRow][i];
@@ -169,7 +169,7 @@ int main(){
 		for(i=0; i<6; i++){
 		matrix[pivotRow+1][i]-=help[i];
 		}
-	}else{//Ha a pivotRow==1, akkor ez az else ág így fog az alatta lévõ együtthatóra fog mutatni.
+	}else{//Ha a pivotRow==1, akkor ez az else Ã¡g Ã­gy fog az alatta lÃ©vÅ‘ egyÃ¼tthatÃ³ra mutatni.
 		for(i=0; i<6; i++){
 			help[i]=matrix[pivotRow+1][pivotCol]*matrix[pivotRow][i];	
 		}
@@ -177,7 +177,7 @@ int main(){
 			matrix[pivotRow-1][i]-=help[i];
 		}
 	}
-	//Ez a kettõvel alatta lévõ együttható.
+	//Ez a kettÅ‘vel alatta lÃ©vÅ‘ egyÃ¼tthatÃ³.
 	if(pivotRow==0){
 		for(i=0; i<6; i++){
 			help[i]=matrix[pivotRow+2][pivotCol]*matrix[pivotRow][i];
@@ -185,7 +185,7 @@ int main(){
 		for(i=0; i<6; i++){
 		matrix[pivotRow+2][i]-=help[i];
 		}
-	}else{//Ha a pivotRow==1, akkor ez az else ág felette lévõ együtthatóra fog mutatni.
+	}else{//Ha a pivotRow==1, akkor ez az else Ã¡g felette lÃ©vÅ‘ egyÃ¼tthatÃ³ra fog mutatni.
 		for(i=0; i<6; i++){
 			help[i]=matrix[pivotRow-1][pivotCol]*matrix[pivotRow][i];	
 		}
@@ -201,7 +201,7 @@ int main(){
 		}
 		printf("\n");
 	}
-	//Most már kiírhatjuk a változók értékét.
+	//Most mÃ¡r kiÃ­rhatjuk a vÃ¡ltozÃ³k Ã©rtÃ©kÃ©t.
 	if(matrix[0][0]==0 && matrix[0][1]==1){
 		y=matrix[0][5];
 	}else{
@@ -215,7 +215,7 @@ int main(){
 	if(matrix[2][0]==0 && matrix[2][1]==0 && matrix[2][4]==1){
 		p=matrix[2][5];
 	}
-	//A slack változókat 0-val egyenlõvé tehetjük.
+	//A slack vÃ¡ltozÃ³kat 0-val egyenlÅ‘vÃ© tehetjÃ¼k.
 	u=0;
 	w=0;
 	printf("\n\nx:%.2f y:%.2f P:%.2f u:%.2f w:%.2f", x, y, p, u, w);
