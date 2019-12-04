@@ -167,14 +167,14 @@ int main(){
 			help[i]=matrix[pivotRow+1][pivotCol]*matrix[pivotRow][i];
 		}
 		for(i=0; i<6; i++){
-		matrix[pivotRow+1][i]-=help[i];
+			matrix[pivotRow+1][i]-=help[i];
 		}
 	}else{//Ha a pivotRow==1, akkor ez az else ág így fog az alatta lévő együtthatóra mutatni.
 		for(i=0; i<6; i++){
 			help[i]=matrix[pivotRow+1][pivotCol]*matrix[pivotRow][i];	
 		}
 		for(i=0; i<6; i++){
-			matrix[pivotRow-1][i]-=help[i];
+			matrix[pivotRow+1][i]-=help[i];
 		}
 	}
 	//Ez a kettővel alatta lévő együttható.
