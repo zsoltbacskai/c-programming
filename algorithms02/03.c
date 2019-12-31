@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 int main(){
-    /*
-	3. Kérj be két számot, írasd ki a legnagyobb közös osztójukat és a legkisebb közös többszörösüket Euklideszi algoritmust használva!
+	/*
+	3. KÃ©rj be kÃ©t szÃ¡mot, Ã­rasd ki a legnagyobb kÃ¶zÃ¶s osztÃ³jukat Ã©s a legkisebb kÃ¶zÃ¶s tÃ¶bbszÃ¶rÃ¶sÃ¼ket Euklideszi algoritmust hasznÃ¡lva!
 	*/
 	int a,b,g,s,temp,lnko,lkkt,factor;
 	printf("Add meg a-t: \n");
