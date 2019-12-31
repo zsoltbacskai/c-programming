@@ -1,0 +1,6 @@
+1. Kérj be egy pénzösszeget, fizesd ki minimális db címlettel!
+2. Kérj be két számot, írasd ki a legnagyobb közös osztójukat és a legkisebb közös többszörösüket!
+3. Kérj be két számot, írasd ki a legnagyobb közös osztójukat és a legkisebb közös többszörösüket Euklideszi algoritmust használva!
+4. Kérj be egy 4 elemű int tömböt elemenként, majd írasd ki az elemeket. Kérj be egy 10 elemű char tömböt elemenként, majd írasd ki az elemeket, használd a for ciklust.
+5. Adj meg egy 10 elemű int tömböt, írasd ki az elemek összegét, valamint a legkisebb és legnagyobb elemet.
+6. Börtönőrös feladat.
