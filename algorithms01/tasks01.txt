@@ -1,0 +1,20 @@
+1. Kérj be egy egész számot, írasd ki a kétszeresét!
+2. Kérd be egy téglalap oldalait, írasd ki a területét, kerületét!
+3. Kérj be egy számot (min 16, max 31), írasd ki a bináris átváltásnál kapott sorokat!
+4. Kérj be egy számot (min 16, max 31), írasd ki a bináris alakját balról jobbra helyesen!
+5. Cseréld fel két int változó értékét segédváltozó nélkül.
+6. Írj programot, mellyel kideríthető az int típusú legnagyobb es legkisebb szám.
+7. Kérd be a saját és a főnököd fizetését, majd 3 operandusú operátort használva írasd ki a vélemenyed!
+8. Kérj be 2 karaktert, majd írasd ki az általuk meghatározott zárt intervallumban lévő karaktereket. Figyelj arra, hogy [b;f] más eredményt ad, mint az [f;b]!
+9. Kérj be 3 számot, írasd ki a legnagyobbat! Oldd meg if nélkül is a feladatot!
+10. Írasd ki 0-tól ezerig azokat a prímszámokat, melyekben a számjegyek összege 8!
+11. Írasd ki 100-ig a bővelkedő számokat!
+12. Írasd ki táblázatos alakban az összes kétbetűs szót, mely előállhat az angol kisbetűs abc első 10 betűjéből!
+13. Kérd be egy háromszög oldalait, írasd ki, hogy derékszögű-e!
+14. Írd ki 1000-ig azokat a számokat, melyek utolsó két számjegye prímszamot alkot!
+15. Írasd ki 100-ig azokat a számokat, melyeknek páratlan számú osztója van!
+16. Írasd ki 100-tól 9999-ig azokat a számokat, melyek utolsó két számjegye által alkotott szám az első két számjegy által alkotott szám fele!
+17. Írasd ki százig azokat a számokat, melyek fele nem prímszám!
+18. Kérj be 3 egész számot, írasd ki, hány darab egyforma van köztük!
+19. Írasd ki 1000-ig azokat a háromjegyű számokat, melyeknek középső számjegye kisebb, mint az első számjegy!
+20. Kérj be egy számot, s írasd ki a tőle nagyobb négyzetszámok közül a legkisebbet!
