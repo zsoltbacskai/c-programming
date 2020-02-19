@@ -1,11 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main(){
 	/*
 	3. Kérj be két számot, írasd ki a legnagyobb közös osztójukat és a legkisebb közös többszörösüket Euklideszi algoritmust használva!
 	*/
-	int a,b,g,s,temp,lnko,lkkt,factor;
+	int a,b,g,s,temp;
 	printf("Add meg a-t: \n");
 	scanf("%d", &a);
 	printf("Add meg b-t: \n");
@@ -13,20 +12,13 @@ int main(){
 	g=a;
 	s=b;
 	while(g!=s){
-		if(g>s){
-			g=g;
-			s=s;
-		}else{
+		if(g<s){
 			temp=g;
 			g=s;
-			s=temp;
+			s=temp;	
 		}
-			g=g-s;
+		g-=s;
 	}
-	lnko=g;
-	printf("LNKO: %d\n", lnko);
-	factor=a*b;
-	lkkt=factor/lnko;
-	printf("LKKT: %d", lkkt);
+	printf("LNKO: %d\nLKKT: %d", g, (a*b)/g);
     return 0;
 }
