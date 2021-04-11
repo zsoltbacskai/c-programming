@@ -1,4 +1,4 @@
-/* 1. Írj programot, mely bekér két egész számot, s kiírja a közös számjegyeit! */
+/* Ãrj programot, mely bekÃ©r kÃ©t egÃ©sz szÃ¡mot, s kiÃ­rja a kÃ¶zÃ¶s szÃ¡mjegyeit! */
 #include <stdio.h>
 int main(){
 	int a,b,ha,hb,mod,div,j,n0=-1,n1=0,n2=0,n3=0,n4=0,n5=0,n6=0,n7=0,n8=0,n9=0,m0=-1,m1=0,m2=0,m3=0,m4=0,m5=0,m6=0,m7=0,m8=0,m9=0;
