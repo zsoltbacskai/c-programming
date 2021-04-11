@@ -1,5 +1,5 @@
-/* 3.Írjon függvényt, mely 2. int paraméterében visszaadja, hogy az elsõ int paraméterében megadott szám hányadik számjegye
- a harmadik char paraméterben megadott számjegy karakter! Feltehetjük, hogy a 3. paraméterben megadott számjegy mindig szerepel az elsõ paraméterben. */
+/* Ãrjon fÃ¼ggvÃ©nyt, mely 2. int paramÃ©terÃ©ben visszaadja, hogy az elsÅ‘ int paramÃ©terÃ©ben megadott szÃ¡m hÃ¡nyadik szÃ¡mjegye
+ a harmadik char paramÃ©terben megadott szÃ¡mjegy karakter! FeltehetjÃ¼k, hogy a 3. paramÃ©terben megadott szÃ¡mjegy mindig szerepel az elsÅ‘ paramÃ©terben. */
 #include <stdio.h>
 int fgv(int a, int b, char c){
 	int div,sup=1,help,place=0;
@@ -65,13 +65,13 @@ int main(){
 	return 0;
 }
 /*
-fgv paraméterei:
-- az elsõben (a) (int) kap egy számot
-- harmadikban (c) (char) megadunk egy számot (ez ugye 1 darab karakter)
-- a másodikban (b) (int) megadjuk, hogy az elsõben hányadik számjegy a harmadikban megadott szám
+fgv paramÃ©terei:
+- az elsÅ‘ben (a) (int) kap egy szÃ¡mot
+- harmadikban (c) (char) megadunk egy szÃ¡mot (ez ugye 1 darab karakter)
+- a mÃ¡sodikban (b) (int) megadjuk, hogy az elsÅ‘ben hÃ¡nyadik szÃ¡mjegy a harmadikban megadott szÃ¡m
 
-A sup egy nagyságrendet jelent... tehát 54321-nél 10000 lesz az értéke.
-Elosztom a számot (help=a) a suppal, ekkor egy egyjegyû int-et (div) kapok és annak az ASCII kódjával adok értéket cHelp-nek. A while addig megy, amíg a fgv harmadik paramétere nem egyenlõ a cHelp-pel.
-Amíg nem teljesül a feltétel, addig a help-bõl kivonom a div*sup-ot (így a második körben már 4321 lesz), sup-ot elosztom 10-zel, hogy 1000 legyen belõle a 4321-hez igzodva és a place (ami helyi értéket jelöl) nõ 1-gyel.
-Mire a végére ér a ciklus, a place-ben lesz a harmadik paraméterben megadott szám helyi értéke.
+A sup egy nagysÃ¡grendet jelent... tehÃ¡t 54321-nÃ©l 10000 lesz az Ã©rtÃ©ke.
+Elosztom a szÃ¡mot (help=a) a suppal, ekkor egy egyjegyÅ± int-et (div) kapok Ã©s annak az ASCII kÃ³djÃ¡val adok Ã©rtÃ©ket cHelp-nek. A while addig megy, amÃ­g a fgv harmadik paramÃ©tere nem egyenlÅ‘ a cHelp-pel.
+AmÃ­g nem teljesÃ¼l a feltÃ©tel, addig a help-bÅ‘l kivonom a div*sup-ot (Ã­gy a mÃ¡sodik kÃ¶rben mÃ¡r 4321 lesz), sup-ot elosztom 10-zel, hogy 1000 legyen belÅ‘le a 4321-hez igzodva Ã©s a place (ami helyi Ã©rtÃ©ket jelÃ¶l) nÅ‘ 1-gyel.
+Mire a vÃ©gÃ©re Ã©r a ciklus, a place-ben lesz a harmadik paramÃ©terben megadott szÃ¡m helyi Ã©rtÃ©ke.
 */
